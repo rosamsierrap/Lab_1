@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "Initial hour:"
+read initial
 ../../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/output/
