@@ -4,7 +4,7 @@ import re
 import os
 import sys
 
-I_hour - os.environ['initial']
+I_hour - initial
 F_hour = 13
 #os.environ['range'].strip().split("-")
 #the user inputs the hour range #12,12 
