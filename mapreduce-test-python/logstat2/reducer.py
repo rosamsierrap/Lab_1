@@ -21,6 +21,6 @@ for line in sys.stdin:
 
 sorted_dictionary_ip_count = sorted(dictionary_ip_count.items(), key=itemgetter(1), reverse=True)
 #sort reserved = the max to minimun count
-for ip_address, count in sorted_dictionary_ip_count:
+for ip_address, count in sorted_dictionary_ip_count[:3]:
     print ('{}\t{}'.format(ip_address, count)) #print the top 3 addresses in the range
                
