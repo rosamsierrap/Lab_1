@@ -1,26 +1,27 @@
 #!/usr/bin/python
 # --*-- coding:utf-8 --*--
-import re
-import os
-import sys
+def mapper(arg):
+    import re
+    import os
+    import sys
 
-I_hour , F_hour = os.environ['RANGE'].strip().split("-")
-#os.environ['RANGE'].strip().split("-")
-#the user inputs the hour range #12,12 
-I_hour, F_hour = int(I_hour), int(F_hour)
+    I_hour , F_hour = arg.strip().split("-")
+    #os.environ['RANGE'].strip().split("-")
+    #the user inputs the hour range #12,12 
+    I_hour, F_hour = int(I_hour), int(F_hour)
 
-if I_hour > 23 or F_hour >23 or I_hour<0 or F_hour<0:
-    #errors in the hours
-    #print('Invalid input')
-    raise Exception('Invalid Input')
+    if I_hour > 23 or F_hour >23 or I_hour<0 or F_hour<0:
+        #errors in the hours
+        #print('Invalid input')
+        raise Exception('Invalid Input')
 
-pat = re.compile('(?P<ip>\d+\.\d+\.\d+\.\d+).*?\d{4}:(?P<hour>\d{2}):\d{2}.*? ')
-for line in sys.stdin:
-    match = pat.search(line)
-    if match:
+    pat = re.compile('(?P<ip>\d+\.\d+\.\d+\.\d+).*?\d{4}:(?P<hour>\d{2}):\d{2}.*? ')
+    for line in sys.stdin:
+        match = pat.search(line)
+        if match:
 
-        hour = int(match.group('hour'))
+            hour = int(match.group('hour'))
 
-        if hour >= I_hour and hour <= F_hour:
-            #only consider the visits inside this hour range
-            print('{}\t{}'.format('[' + match.group('hour') + ':00' + ']' + match.group('ip'), 1))
+            if hour >= I_hour and hour <= F_hour:
+                #only consider the visits inside this hour range
+                print('{}\t{}'.format('[' + match.group('hour') + ':00' + ']' + match.group('ip'), 1))
