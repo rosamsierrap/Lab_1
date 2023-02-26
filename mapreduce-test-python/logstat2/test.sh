@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Insert range. Ex: 12-14" 
 read RANGE
-../../start.sh
+../../start.sh:q
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/output/
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /logstat2/input/
