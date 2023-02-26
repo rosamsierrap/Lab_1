@@ -5,7 +5,7 @@ import os
 import sys
 
 def mapper(hour):
-    I_hour , F_hour = os.environ['range'].strip().split("-")
+    I_hour , F_hour = hour.strip().split("-")
     #the user inputs the hour range #12,12 
     I_hour, F_hour = int(I_hour), int(F_hour)
 
@@ -24,3 +24,5 @@ def mapper(hour):
             if hour >= I_hour and hour <= F_hour:
                 #only consider the visits inside this hour range
                 print('{}\t{}'.format('[' + match.group('hour') + ':00' + ']' + match.group('ip'), 1))
+
+mapper(os.environ['range'])
