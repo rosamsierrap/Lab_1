@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "enter time. Ex: 10-12"
-read range
+-D range = read 
 ../../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/output/
