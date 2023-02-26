@@ -1,5 +1,5 @@
 #!/bin/sh
-bash "insert hours"
+echo "insert hours"
 read arg
 ../../start.sh
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/
