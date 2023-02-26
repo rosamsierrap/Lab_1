@@ -4,7 +4,8 @@ import re
 import os
 import sys
 
-I_hour, F_hour = 12,12 #os.environ['RANGE'].strip().split("-") #the user inputs the hour range
+I_hour, F_hour = os.environ['RANGE'].strip().split("-") 
+#the user inputs the hour range #12,12 
 I_hour, F_hour = int(I_hour), int(F_hour)
 
 if I_hour > 23 or F_hour >23 or I_hour<0 or F_hour<0:
