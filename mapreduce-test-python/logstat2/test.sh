@@ -8,6 +8,7 @@
 -file mapper.py -mapper mapper.py \
 -file reducer.py -reducer reducer.py \
 -cmdenv RANGE="${1}" \
+-input /logstat2/input/* -output /logstat2/output/
 /usr/local/hadoop/bin/hdfs dfs -cat /logstat2/output/part-00000
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/input/
 /usr/local/hadoop/bin/hdfs dfs -rm -r /logstat2/output/
