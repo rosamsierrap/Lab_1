@@ -5,7 +5,7 @@ import re
 import os
 import sys
 
-I_hour , F_hour = sys.argv[].strip().split("-")
+I_hour , F_hour = sys.argv[1].strip().split("-")
 #os.environ['RANGE'].strip().split("-")
 #the user inputs the hour range #12,12 
 I_hour, F_hour = int(I_hour), int(F_hour)
